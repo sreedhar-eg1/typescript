@@ -1,0 +1,14 @@
+readonly -> to make the field to readonly
+means it can only be accessed but can't change
+
+public -> can access and change the value
+private -> can access only within the class
+protected -< can access within the class and also the class that was inherited
+
+abstract classes => we cant directly instantiate the abstract classes
+It acts as a base class where other class can inherit it
+
+interface -> it is a typescript specific feature, there is no interface feature in javascript
+It is used for object type definitions and also contracts that can be implemented by classes
+
+we can also extentds interface with other

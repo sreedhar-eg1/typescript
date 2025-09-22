@@ -1,0 +1,7 @@
+strict => If we set it to true, then we get strict type checking
+
+{
+  "noUnusedLocals": true, // helps you detect unused variable
+  "noUnusedParameters": true, // helps you detect unused function parameters
+  "noFallthroughCasesInSwitch": true // helps you detect switch cases without break or return
+}

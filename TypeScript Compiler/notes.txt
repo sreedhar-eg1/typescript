@@ -1,0 +1,28 @@
+To create a TS config file
+run tsc --init
+
+a new file called tsconfig.json file will be created, which is used to configure typescript behavior
+
+
+target -> how the project is compiled
+If the user uses latest modern browser, then we can use latest version like es2024... otherwise use es2016
+
+lib -> If we want to include any type library, than we can include inside lib array
+
+module => how import and export should work
+
+rootDir -> If the src file is situated in some other location, then we can point it to that location with the help of rootDir
+
+
+JAVASCRIPT SUPPORT
+allowJS -> if we set this to true, then we can have a combination of javascript and typescript
+
+checkJS -> to enable basic type checking in javascript file
+
+
+EMIT
+sourcemap => If it is set to true, then it generates source map, which helps in debugging
+
+outDir => we can specify the location where our compiled file should stay
+
+noEmitOnError => If we set it to true, if any error occurs in ts file, corresponding JS file is not generated while compiling

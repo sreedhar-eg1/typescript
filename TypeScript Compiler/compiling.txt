@@ -1,0 +1,10 @@
+if we compile individual file, i,e using tsc app.ts, then this tsconfig.json file dont take into effect
+
+because tsconfig.json file is applied to overall project
+
+so to run entire project we need to run only tsc
+
+To run it in watch mode
+tsc --watch
+
+rerun when something changes

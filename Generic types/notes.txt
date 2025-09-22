@@ -1,0 +1,8 @@
+generic types
+Its a combination of types
+
+We use generic type inseide <>, for ex. Array<string>
+
+we can also specify multiple gentic types <T, S>
+
+we can add generic constraints using extends keyword

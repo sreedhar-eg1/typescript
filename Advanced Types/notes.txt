@@ -1,0 +1,9 @@
+intersection type -> &
+combine both type using "&" symbol
+Ex. a & b
+
+function overloads
+typescript allows us to add multiple function signature to one function body
+
+satisfies keyword
+if we use satisfies, then typescript will look into the data
