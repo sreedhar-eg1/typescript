@@ -12,3 +12,6 @@ we can also make mapped fields readonly
 
 conditional types
 it is the type used to build utility or helper types
+
+infer
+If we need to extract the type of return value, than we can make use "infer"
