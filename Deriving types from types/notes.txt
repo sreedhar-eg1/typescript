@@ -9,3 +9,6 @@ mapped type
 simple way of converting one object type to another type
 we can do more than mapping while using mapped types, i.e making property optional and vice versa
 we can also make mapped fields readonly
+
+conditional types
+it is the type used to build utility or helper types
