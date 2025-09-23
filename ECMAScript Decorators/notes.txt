@@ -1,0 +1,28 @@
+Decorator
+It is a metaprogramming
+Code that interact with other code
+
+Two types of decorator
+1. ECMAscript decorator
+    Built into javascript
+    Can be used without typescript
+
+2. Experimental decorator
+    previously planned implementation
+    Did not make it into javascript
+    Only supported by typescript
+    requires "experimentalDecorators" configuration
+
+Both types of decorator can be used with typescript
+
+decorator in javacript are just function
+
+For ECMAscript decorator function we need to pass two argument
+we declare decorator infront of class or above useing @ symbol
+
+we can use decorator to change things
+
+type for class => new () => any
+
+we can have method decorator also
+method decorator are executed before class decorator
