@@ -38,6 +38,17 @@ function autoBind(
   console.log("AutoBind decorator");
   console.log(target);
   console.log(ctx);
+
+  // addInitializer => is a utility method, means to get constructor function after the class has been fully defined
+  ctx.addInitializer(function (this: any) {
+    this[ctx.name] = this[ctx.name].bind(this);
+  });
+
+  // like class decorator we can also return new function to replace the old function
+  return function (this: any) {
+    console.log("AutoBind function");
+    target.apply(this);
+  };
 }
 
 @logger
