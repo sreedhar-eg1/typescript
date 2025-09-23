@@ -51,8 +51,25 @@ function autoBind(
   };
 }
 
+// FIELD DECORATOR
+
+// type of target will be always undefined because decorator is applied before the field is initialized
+function fieldLogger(target: undefined, ctx: ClassFieldDecoratorContext) {
+  console.log("Field decorator");
+  console.log(target);
+  console.log(ctx);
+
+  // we can also return value to replace the old value
+  // we will get initial value as an argument
+  return (initialValue: any) => {
+    console.log(initialValue)
+    return initialValue + " (modified by field decorator)";
+  }
+}
+
 @logger
 class Person {
+  @fieldLogger
   name = "John Doe";
 
   // method decorator

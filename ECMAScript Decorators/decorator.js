@@ -65,6 +65,22 @@ function autoBind(target, ctx) {
     console.log("AutoBind decorator");
     console.log(target);
     console.log(ctx);
+    // addInitializer => is a utility method, means to get constructor function after the class has been fully defined
+    ctx.addInitializer(function () {
+        this[ctx.name] = this[ctx.name].bind(this);
+    });
+    // like class decorator we can also return new function to replace the old function
+    return function () {
+        console.log("AutoBind function");
+        target.apply(this);
+    };
+}
+// FIELD DECORATOR
+// type of target will be always undefined because decorator is applied before the field is initialized
+function fieldLogger(target, ctx) {
+    console.log("Field decorator");
+    console.log(target);
+    console.log(ctx);
 }
 let Person = (() => {
     let _classDecorators = [logger];
@@ -72,21 +88,27 @@ let Person = (() => {
     let _classExtraInitializers = [];
     let _classThis;
     let _instanceExtraInitializers = [];
+    let _name_decorators;
+    let _name_initializers = [];
+    let _name_extraInitializers = [];
     let _greet_decorators;
     var Person = _classThis = class {
-        constructor() {
-            this.name = (__runInitializers(this, _instanceExtraInitializers), "John Doe");
-        }
         // method decorator
         greet() {
             console.log(`Hello, my name is ${this.name}`);
+        }
+        constructor() {
+            this.name = (__runInitializers(this, _instanceExtraInitializers), __runInitializers(this, _name_initializers, "John Doe"));
+            __runInitializers(this, _name_extraInitializers);
         }
     };
     __setFunctionName(_classThis, "Person");
     (() => {
         const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
+        _name_decorators = [fieldLogger];
         _greet_decorators = [autoBind];
         __esDecorate(_classThis, null, _greet_decorators, { kind: "method", name: "greet", static: false, private: false, access: { has: obj => "greet" in obj, get: obj => obj.greet }, metadata: _metadata }, null, _instanceExtraInitializers);
+        __esDecorate(null, null, _name_decorators, { kind: "field", name: "name", static: false, private: false, access: { has: obj => "name" in obj, get: obj => obj.name, set: (obj, value) => { obj.name = value; } }, metadata: _metadata }, _name_initializers, _name_extraInitializers);
         __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
         Person = _classThis = _classDescriptor.value;
         if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });

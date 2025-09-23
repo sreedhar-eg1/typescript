@@ -26,3 +26,5 @@ type for class => new () => any
 
 we can have method decorator also
 method decorator are executed before class decorator
+
+There is field decorator also
