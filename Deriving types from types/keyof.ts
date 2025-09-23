@@ -16,3 +16,6 @@ function getProp<T extends object, U extends keyof T>(obj: T, key: U) {
 
   return value;
 }
+
+const userObj = { name: "Alice", age: 30 };
+const propValue = getProp(userObj, "name"); // propValue is of type string

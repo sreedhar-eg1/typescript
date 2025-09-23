@@ -4,3 +4,6 @@ Using this we can get the typeof and predefined object and function
 keyof
 Used to get the keys of any type as the type
 While using keyof, after keyof we need to specify another type where we need to abstract keys
+
+mapped type
+simple way of converting one object type to another type
