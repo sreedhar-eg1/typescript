@@ -1,0 +1,19 @@
+decorator executes when our class is defined, not after it has been instantiated
+
+decorator factory
+it returns the decorator function, but allows us to configure it when we assign it as a decorator
+when we are using decorator factory, then we need to execute the function instead of pointing
+
+we can add more than one decorator to class, method or field
+order of execution of decorator is from bottom to top
+
+here the order will be @withTemplate => @logger
+@logger("Logging decorator factory")
+@withTemplate("<h1>My Person Object</h1>", "app")
+
+
+Order of decorator execute
+All decorator runs without instantiating the class
+
+we can return while using decorator, if we return something, then it works only when we instantiate
+we can return something only for class, method and accessor
