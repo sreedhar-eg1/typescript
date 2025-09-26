@@ -1,0 +1,16 @@
+
+we can make use of namespace to split code
+with export keyword, it can be accessed outside
+
+inside namespace we can add anything, like class, interface....
+we need to provide name for the namespace
+
+We can import namespace in another file using ///
+for ex, /// <reference path="drag-and-drop.ts" />
+we can give same name for the namespace across multiple files 
+
+namespace exists only in typescript world, its not available in javascript
+so to solve this, in tsconfig file, use "outFile": "./dist/bundle.js"
+to this to work, we need to set module to amd in tsconfig file
+
+
