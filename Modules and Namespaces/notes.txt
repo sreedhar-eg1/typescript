@@ -13,4 +13,20 @@ namespace exists only in typescript world, its not available in javascript
 so to solve this, in tsconfig file, use "outFile": "./dist/bundle.js"
 to this to work, we need to set module to amd in tsconfig file
 
+The main problem with namespace is if we dont require file, then we dont see error at runtime
 
+To solve this problem we can use es modules
+
+While using ES6 modules, we can group import 
+import * as Validation from 'validation.js'
+Then we can use it as validation.validate(...)
+
+we can rename imported thing using "as" keyword
+import {validate as ValidateInput} from 'validation.js'
+
+If we are importing any type or interface, after compiling it will be lost as there is no  type in javascript
+So while importing type we can anote it using type keyword
+import {type Draggable} from 'drag.js'
+
+If everything that we import is a type than we can use
+import type {Draggable, Droppable} from 'drag.js'
