@@ -1,0 +1,10 @@
+When we are in front end world, when we run tsc, only ts file is compiles, 
+where html and css file is not included
+
+solution is used to use build tool like webpack, esbuild ..etc
+
+we can use vite, which is a popular tool to build any web dev project
+
+.d.ts file
+file with tjis extension is a typescript declaration file
+It include type definition required by other files but cant executed
