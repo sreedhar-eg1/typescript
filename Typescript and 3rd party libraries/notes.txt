@@ -1,0 +1,6 @@
+Using typescript with javascript libraries
+If we need to use the package that was completely written in javascript in our typescript project
+we will get error stating "Could not find a declaration file for module 'lodash'" last will be package name
+
+solution for such problem is to install @types dependency related to the dependency that we are facing issue
+Ex for loadash package: npm i --save-dev @types/lodash
