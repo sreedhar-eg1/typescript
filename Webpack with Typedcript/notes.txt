@@ -1,0 +1,46 @@
+When we access the site we can see lots of http request in netork tab (while not using webpack)
+problem here is every http request takes some time to download,
+it will take some time to setup the request and send it, can be noticed in network tab, a white box before request timeline
+
+so we can use webpack, a bundling tool
+we can bundle the code and theredore there will be less http request to be made which will increase the performance
+
+usage of webpack
+bundles the code, less imports are rerquired
+optimized code, less code to download
+
+
+WEBPACK INSTALLATION
+npm i -D webpack webpack-cli webpack-dev-server typescript ts-loader
+
+webpack => used to bundle code and also for optimaization and transform our code
+webpack-cli => to run webpack command in our project
+webpack-dev-server => to have built in development server, watches for changes and tell webpack to recompile when something changes
+ts-loader => works along with webpack, tells how to convert typescript code to javascript
+
+changes to be made in tscongfig.ts file
+rootDir is not required as webpack take care of this
+
+Add a new config file called webpak.config.js file
+This is the file webpack automaticaaly look for
+
+here we need to specify the entry point of the application, and all import should not contains any extension
+entry: '...
+
+also need to specify output, which is an object
+
+we also need to tell, how the import are handled, which can be done using module object
+
+there is an resolve object, where we can say, which file extension should be added if it encounter any import specified in
+module object rules
+
+In ts.config file, set sourcemap to true, which helps in debugging
+in turn in webpack config file, use devtool: 'inline-source-map',
+tells source map file will be generated already, extract it and wire up correctly to the bundle
+
+After you have done with webpack configuration, next thing is how to use it
+we can use it by creating a script in package json file
+"build": "webpack"
+
+for production, we need different workflow, so we need another webpack.config.js file
+i.e webpack.config.prod.js, whereas webpack.config.js file will ne looked automaticaaly by webpack
